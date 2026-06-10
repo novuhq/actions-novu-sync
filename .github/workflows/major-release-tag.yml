@@ -15,6 +15,9 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: write
+
 jobs:
   movetag:
     runs-on: ubuntu-latest

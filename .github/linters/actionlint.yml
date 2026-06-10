@@ -1,0 +1,6 @@
+# actionlint in super-linter v6.7.0 predates node24 action runtime support.
+# Remove this ignore once super-linter bundles actionlint >= 1.7.12.
+paths:
+  .github/workflows/**/*.yml:
+    ignore:
+      - 'invalid runner name "node24"'
