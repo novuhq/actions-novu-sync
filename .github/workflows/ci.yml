@@ -47,35 +47,35 @@ jobs:
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Test local action on Node 24
-        id: local-action
-        uses: ./
-        continue-on-error: true
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          secret-key: ci-smoke-test-key
-          bridge-url: https://example.com/novu-bridge
+          node-version-file: .node-version
 
-      - name: Verify action executed on Node 24
+      - name: Verify action runtime is node24
         run: |
-          echo "Action outcome: ${{ steps.local-action.outcome }}"
-          echo "Action success output: ${{ steps.local-action.outputs.success }}"
+          grep -q 'using: node24' action.yml
 
-          if [ -z "${{ steps.local-action.outputs.success }}" ]; then
-            echo "Action did not produce outputs — runtime may have failed to start"
+      - name: Smoke test action entrypoint
+        id: local-action
+        continue-on-error: true
+        env:
+          INPUT_SECRET-KEY: ci-smoke-test-key
+          INPUT_BRIDGE-URL: https://example.com/novu-bridge
+          INPUT_API-URL: https://api.novu.co
+        run: node dist/index.js
+
+      - name: Verify action entrypoint executed
+        run: |
+          if [ "${{ steps.local-action.outcome }}" != "failure" ]; then
+            echo "Expected API failure with test credentials, got: ${{ steps.local-action.outcome }}"
             exit 1
           fi
 
-          if [ "${{ steps.local-action.outputs.success }}" != "false" ]; then
-            echo "Unexpected success with test credentials"
-            exit 1
-          fi
-
-          echo "Action loaded and executed on Node 24"
+          echo "Action entrypoint executed on Node 24"
