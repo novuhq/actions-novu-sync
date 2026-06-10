@@ -1,7 +1,7 @@
 {
   "name": "@novuhq/novu-sync-action",
   "description": "Novu Sync Action",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Novu Team <engineering@novu.co>",
   "private": true,
   "homepage": "https://github.com/novuhq/actions-novu-sync",
@@ -21,7 +21,7 @@
     ".": "./dist/index.js"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "bundle": "npm run format:write && npm run package",
@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.19",
+    "@types/node": "^24.1.19",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vercel/ncc": "^0.38.1",

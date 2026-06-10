@@ -47,8 +47,35 @@ jobs:
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
+
+      - name: Test local action on Node 24
+        id: local-action
+        uses: ./
+        continue-on-error: true
+        with:
+          secret-key: ci-smoke-test-key
+          bridge-url: https://example.com/novu-bridge
+
+      - name: Verify action executed on Node 24
+        run: |
+          echo "Action outcome: ${{ steps.local-action.outcome }}"
+          echo "Action success output: ${{ steps.local-action.outputs.success }}"
+
+          if [ -z "${{ steps.local-action.outputs.success }}" ]; then
+            echo "Action did not produce outputs — runtime may have failed to start"
+            exit 1
+          fi
+
+          if [ "${{ steps.local-action.outputs.success }}" != "false" ]; then
+            echo "Unexpected success with test credentials"
+            exit 1
+          fi
+
+          echo "Action loaded and executed on Node 24"
