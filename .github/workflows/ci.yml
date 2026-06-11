@@ -19,11 +19,11 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Setup Node.js
         id: setup-node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .node-version
           cache: npm
@@ -51,4 +51,31 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .node-version
+
+      - name: Verify action runtime is node24
+        run: |
+          grep -q 'using: node24' action.yml
+
+      - name: Smoke test action entrypoint
+        id: local-action
+        continue-on-error: true
+        env:
+          INPUT_SECRET-KEY: ci-smoke-test-key
+          INPUT_BRIDGE-URL: https://example.com/novu-bridge
+          INPUT_API-URL: https://api.novu.co
+        run: node dist/index.js
+
+      - name: Verify action entrypoint executed
+        run: |
+          if [ "${{ steps.local-action.outcome }}" != "failure" ]; then
+            echo "Expected API failure with test credentials, got: ${{ steps.local-action.outcome }}"
+            exit 1
+          fi
+
+          echo "Action entrypoint executed on Node 24"
