@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Request recovery</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+@keyframes locPulse{0%{transform:scale(.3);opacity:.8}100%{transform:scale(1);opacity:0}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif">
+
+  <svg width="390" height="460" viewBox="0 0 390 460" aria-hidden="true" style="position: absolute; left: 0; top: 0; display: block">
+    <defs>
+      <pattern id="c02Streets" width="34" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-34)">
+        <path d="M34 0V26M0 26H34" fill="none" stroke="#1A1D22" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="390" height="460" fill="#0F1114"/>
+    <rect width="390" height="460" fill="url(#c02Streets)"/>
+    <polygon points="250,250 300,216 334,266 284,300" fill="#11171A"/>
+    <path d="M-58 51L334 632M112 -79L504 502" stroke="#20242A" stroke-width="5" fill="none"/>
+    <path d="M-20 300L410 10" stroke="#23272D" stroke-width="6" fill="none"/>
+    <path d="M-20 375L410 85" stroke="#2B2F36" stroke-width="13" fill="none"/>
+    <path d="M-20 375L410 85" stroke="#3C414A" stroke-width="1.2" fill="none"/>
+    <polygon points="0,0 348,0 0,235" fill="#091017"/>
+    <path d="M0 235L348 0" stroke="#16222C" stroke-width="1.5" fill="none"/>
+    <text x="24" y="120" fill="#2A3946" font-family="'Geist Mono', ui-monospace, monospace" font-size="9" letter-spacing="2">ARABIAN GULF</text>
+    <text x="252" y="196" transform="rotate(-34 252 196)" fill="#555861" font-family="'Geist Mono', ui-monospace, monospace" font-size="8" letter-spacing="1.6">SHEIKH ZAYED RD</text>
+    <text x="40" y="262" transform="rotate(-34 40 262)" fill="#474A52" font-family="'Geist Mono', ui-monospace, monospace" font-size="8" letter-spacing="1.6">AL SUFOUH RD</text>
+    <g transform="translate(300 128) rotate(-34)"><rect x="-10" y="-6" width="20" height="12" rx="3.5" fill="#1A1C20" stroke="#F2A93B" stroke-width="1.3"/><rect x="4" y="-4" width="4" height="8" rx="1" fill="#F2A93B"/></g>
+    <g transform="translate(86 342) rotate(-34)"><rect x="-10" y="-6" width="20" height="12" rx="3.5" fill="#1A1C20" stroke="#F2A93B" stroke-width="1.3"/><rect x="4" y="-4" width="4" height="8" rx="1" fill="#F2A93B"/></g>
+    <g transform="translate(338 330) rotate(56)"><rect x="-10" y="-6" width="20" height="12" rx="3.5" fill="#1A1C20" stroke="#F2A93B" stroke-width="1.3"/><rect x="4" y="-4" width="4" height="8" rx="1" fill="#F2A93B"/></g>
+  </svg>
+
+  <div aria-hidden="true" style="position: absolute; left: 135px; top: 170px; width: 120px; height: 120px; border-radius: 50%; background: rgba(242,169,59,.16); border: 1px solid rgba(242,169,59,.6); animation: locPulse 2.6s ease-out infinite"></div>
+  <div aria-hidden="true" style="position: absolute; left: 186px; top: 221px; width: 18px; height: 18px; border-radius: 50%; background: #F2A93B; box-shadow: 0 0 0 4px #0B0C0E, 0 0 0 5px rgba(242,169,59,.6)"></div>
+  <div style="position: absolute; left: 50%; top: 168px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 999px; background: #F3F1EC; color: #0B0C0E; font-size: 13px; font-weight: 600; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,.45)">You're here<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.08em; color: #55534E; font-weight: 500">GPS ±5 M</span></div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 58px; display: flex; justify-content: space-between; gap: 12px">
+    <button type="button" aria-label="Menu" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #2A2D33; background: rgba(19,21,24,.88); color: #F3F1EC; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+    <button type="button" aria-label="Concierge support" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #2A2D33; background: rgba(19,21,24,.88); color: #F3F1EC; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></button>
+  </div>
+  <button type="button" aria-label="Re-centre on my location" style="position: absolute; right: 20px; top: 318px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid #2A2D33; background: rgba(19,21,24,.88); color: #F6B85A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/></svg></button>
+
+  <section style="position: absolute; left: 0; right: 0; bottom: 0; height: 462px; box-sizing: border-box; padding: 10px 20px 34px; border-radius: 28px 28px 0 0; background: #131518; border-top: 1px solid #262930; box-shadow: 0 -20px 50px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 18px">
+    <span aria-hidden="true" style="align-self: center; width: 38px; height: 5px; border-radius: 3px; background: #34373E"></span>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 0 4px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #F6B85A">NEW RECOVERY</span>
+      <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 27px; line-height: 1.1; letter-spacing: -0.025em">How can we help?</h1>
+      <p style="margin: 0; font-size: 15px; color: #B5B3AD">We match the right truck to your car.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; border-radius: 20px; background: #1A1C20; border: 1px solid #262930; position: relative">
+      <span aria-hidden="true" style="position: absolute; left: 35px; top: 46px; width: 1px; height: 46px; background: repeating-linear-gradient(#5D5F66 0 3px, transparent 3px 7px)"></span>
+      <button type="button" style="display: flex; align-items: center; gap: 14px; min-height: 68px; padding: 0 16px; border: 0; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer">
+        <span style="width: 40px; height: 40px; flex: none; display: flex; align-items: center; justify-content: center"><span style="width: 12px; height: 12px; border-radius: 50%; background: #F2A93B; box-shadow: 0 0 0 4px rgba(242,169,59,.2)"></span></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #8C8B86">PICK-UP · CURRENT LOCATION</span><span style="font-size: 16px; font-weight: 600">Sheikh Zayed Road, Dubai</span></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C8B86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <span aria-hidden="true" style="height: 1px; margin-left: 70px; background: #262930"></span>
+      <button type="button" style="display: flex; align-items: center; gap: 14px; min-height: 68px; padding: 0 16px; border: 0; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer">
+        <span style="width: 40px; height: 40px; flex: none; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; border-radius: 3px; border: 2px solid #F3F1EC"></span></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #8C8B86">DROP-OFF</span><span style="font-size: 16px; font-weight: 600">Dubai Marina</span></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C8B86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <span aria-hidden="true" style="height: 1px; background: #262930"></span>
+      <button type="button" style="display: flex; align-items: center; gap: 14px; min-height: 68px; padding: 0 16px; border: 0; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer">
+        <span style="width: 40px; height: 40px; flex: none; border-radius: 12px; background: #23262B; display: flex; align-items: center; justify-content: center; color: #F3F1EC"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 15.5v-2.2l2.6-4.1a2 2 0 0 1 1.7-.9h7.7a3 3 0 0 1 2.1.9l2.9 2.9 1.9.6a1.6 1.6 0 0 1 1.1 1.5v1.3"/><circle cx="7" cy="16" r="1.8"/><circle cx="17.5" cy="16" r="1.8"/><path d="M9 16h6.6M2.5 16h2.6"/></svg></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #8C8B86">VEHICLE</span><span style="font-size: 16px; font-weight: 600">McLaren 720S <span style="font-weight: 400; color: #B5B3AD">· lowered</span></span></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C8B86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+
+    <a href="C03-Recovery-Type.dc.html" style="margin-top: auto; height: 56px; border-radius: 16px; background: #F2A93B; color: #1B1408; text-decoration: none; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px">Request recovery<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

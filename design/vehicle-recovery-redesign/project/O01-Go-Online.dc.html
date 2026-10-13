@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Operator — Go online</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+@keyframes scanSweep{0%{transform:scale(.2);opacity:.7}100%{transform:scale(1);opacity:0}}
+@keyframes dotBlink{0%,100%{opacity:.25}50%{opacity:1}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif">
+
+  <svg width="390" height="600" viewBox="0 0 390 600" aria-hidden="true" style="position: absolute; left: 0; top: 0; display: block">
+    <defs>
+      <pattern id="o01Streets" width="34" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-34)">
+        <path d="M34 0V26M0 26H34" fill="none" stroke="#1A1D22" stroke-width="1"/>
+      </pattern>
+      <radialGradient id="o01Hot" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#F2A93B" stop-opacity="0.42"/>
+        <stop offset="0.55" stop-color="#F2A93B" stop-opacity="0.14"/>
+        <stop offset="1" stop-color="#F2A93B" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="o01Warm" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#F2A93B" stop-opacity="0.2"/>
+        <stop offset="1" stop-color="#F2A93B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="390" height="600" fill="#0F1114"/>
+    <rect width="390" height="600" fill="url(#o01Streets)"/>
+    <path d="M-60 120L300 654M110 0L470 534" stroke="#20242A" stroke-width="5" fill="none"/>
+    <path d="M-20 380L410 90" stroke="#23272D" stroke-width="6" fill="none"/>
+    <path d="M-20 470L410 180" stroke="#2B2F36" stroke-width="13" fill="none"/>
+    <path d="M-20 470L410 180" stroke="#3C414A" stroke-width="1.2" fill="none"/>
+    <polygon points="0,0 390,0 390,40 0,302" fill="#091017"/>
+    <path d="M0 302L390 40" stroke="#16222C" stroke-width="1.5" fill="none"/>
+    <circle cx="105" cy="345" r="130" fill="url(#o01Hot)"/>
+    <circle cx="315" cy="250" r="90" fill="url(#o01Warm)"/>
+    <text x="30" y="150" fill="#2A3946" font-family="'Geist Mono', ui-monospace, monospace" font-size="9" letter-spacing="2">ARABIAN GULF</text>
+    <text x="250" y="270" transform="rotate(-34 250 270)" fill="#555861" font-family="'Geist Mono', ui-monospace, monospace" font-size="8" letter-spacing="1.6">SHEIKH ZAYED RD</text>
+  </svg>
+
+  <span style="position: absolute; left: 44px; top: 278px; display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 11px; border-radius: 999px; background: #F2A93B; color: #1B1408; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; box-shadow: 0 8px 24px rgba(0,0,0,.45)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>HIGH DEMAND · MARINA</span>
+  <span style="position: absolute; left: 262px; top: 196px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(19,21,24,.9); border: 1px solid #30333A; color: #B5B3AD; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.12em; display: inline-flex; align-items: center">BUSY · AL SUFOUH</span>
+
+  <sc-if value="{{online}}" hint-placeholder-val="{{true}}">
+    <div aria-hidden="true" style="position: absolute; left: 115px; top: 300px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(242,169,59,.7); background: rgba(242,169,59,.06); animation: scanSweep 2.8s ease-out infinite"></div>
+  </sc-if>
+  <div aria-hidden="true" style="position: absolute; left: 195px; top: 380px; width: 40px; height: 40px; border-radius: 50%; background: {{puckBg}}; box-shadow: 0 0 0 4px #0B0C0E, 0 10px 24px rgba(0,0,0,.6); display: flex; align-items: center; justify-content: center; color: #1B1408"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="transform: rotate(-34deg)"><path d="M12 3l7 17-7-4-7 4z"/></svg></div>
+
+  <div style="position: absolute; left: 20px; right: 20px; top: 58px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+    <button type="button" aria-label="Profile" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #2A2D33; background: #23262B; color: #F3F1EC; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 18px; cursor: pointer">A</button>
+    <span style="height: 34px; padding: 0 14px; border-radius: 999px; background: rgba(19,21,24,.9); border: 1px solid #2A2D33; display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #B5B3AD">OPERATOR · LOW-ANGLE</span>
+    <button type="button" aria-label="Notifications" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #2A2D33; background: rgba(19,21,24,.9); color: #F3F1EC; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5h4"/></svg></button>
+  </div>
+
+  <section style="position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; padding: 10px 20px 34px; border-radius: 28px 28px 0 0; background: #131518; border-top: 1px solid #262930; box-shadow: 0 -20px 50px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 18px">
+    <span aria-hidden="true" style="align-self: center; width: 38px; height: 5px; border-radius: 3px; background: #34373E"></span>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 28px; line-height: 1.05; letter-spacing: -0.03em; color: {{statusInk}}">{{statusTitle}}</h1>
+        <span style="font-size: 14px; color: #B5B3AD">Low-Angle · Truck D 12345</span>
+      </div>
+      <button type="button" role="switch" aria-checked="{{online}}" aria-label="Online" onClick="{{toggle}}" style="width: 72px; height: 44px; flex: none; box-sizing: border-box; border-radius: 999px; border: 0; padding: 4px; background: {{trackBg}}; display: flex; justify-content: {{knobSide}}; cursor: pointer">
+        <span style="width: 36px; height: 36px; border-radius: 50%; background: {{knobBg}}; box-shadow: 0 2px 6px rgba(0,0,0,.4)"></span>
+      </button>
+    </div>
+
+    <sc-if value="{{online}}" hint-placeholder-val="{{true}}">
+      <a href="O02-Incoming-Job.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border-radius: 16px; background: #1C1810; border: 1px solid #3A2D17; color: #F6B85A; text-decoration: none; font-size: 15px; font-weight: 500">
+        <span style="display: inline-flex; gap: 4px" aria-hidden="true"><span style="width: 6px; height: 6px; border-radius: 50%; background: #F2A93B; animation: dotBlink 1.2s infinite"></span><span style="width: 6px; height: 6px; border-radius: 50%; background: #F2A93B; animation: dotBlink 1.2s .2s infinite"></span><span style="width: 6px; height: 6px; border-radius: 50%; background: #F2A93B; animation: dotBlink 1.2s .4s infinite"></span></span>
+        Finding Low-Angle jobs near you
+      </a>
+    </sc-if>
+    <sc-if value="{{offline}}" hint-placeholder-val="{{false}}">
+      <p style="margin: 0; display: flex; align-items: center; min-height: 52px; padding: 0 16px; border-radius: 16px; background: #1A1C20; color: #B5B3AD; font-size: 15px">Go online to receive job offers.</p>
+    </sc-if>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: 18px; background: #1A1C20">
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 16px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #8C8B86">TODAY · AED</span><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 22px; letter-spacing: -0.02em">760</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-left: 1px solid #2A2D33"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #8C8B86">JOBS</span><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 22px; letter-spacing: -0.02em">3</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-left: 1px solid #2A2D33"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #8C8B86">RATING</span><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 22px; letter-spacing: -0.02em">4.9</span></div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const online = !(this.state && this.state.offline);
+    return {
+      online: online,
+      offline: !online,
+      statusTitle: online ? "You're online" : "You're offline",
+      statusInk: online ? '#F3F1EC' : '#8C8B86',
+      trackBg: online ? '#F2A93B' : '#30333A',
+      knobBg: online ? '#1B1408' : '#B5B3AD',
+      knobSide: online ? 'flex-end' : 'flex-start',
+      puckBg: online ? '#F2A93B' : '#5D5F66',
+      toggle: () => this.setState({ offline: online })
+    };
+  }
+}
+</script>
+</body>
+</html>

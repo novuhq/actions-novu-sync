@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Operator — Earnings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+.o06col .o06tip{opacity:0;transform:translate(-50%,4px);transition:opacity .15s,transform .15s}
+.o06col:hover .o06tip,.o06col:focus-visible .o06tip{opacity:1;transform:translate(-50%,0)}
+.o06col:focus-visible{outline:2px solid #F2A93B;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif; padding: 58px 20px 34px; display: flex; flex-direction: column; gap: 20px">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+    <a href="O01-Go-Online.dc.html" aria-label="Back to map" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #2A2D33; background: #131518; color: #F3F1EC; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
+    <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #8C8B86">EARNINGS · TODAY</span>
+    <span style="width: 48px"></span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px">
+    <h1 style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500; color: #8C8B86">AED</span><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 56px; letter-spacing: -0.045em; line-height: 0.95">1,240</span></h1>
+    <span style="font-size: 15px; color: #B5B3AD">4 jobs · 4h 40m online</span>
+  </div>
+
+  <figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 14px; border-radius: 22px; background: #131518; border: 1px solid #24272C">
+    <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #8C8B86">THIS WEEK · AED PER DAY</span>
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #F3F1EC">AED 5,280</span>
+    </figcaption>
+    <div style="position: relative; height: 150px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); align-items: end; border-bottom: 1px solid #3A3D44">
+      <sc-for list="{{days}}" as="d" hint-placeholder-count="7">
+        <button type="button" class="o06col" aria-label="{{d.aria}}" style="position: relative; height: 150px; border: 0; padding: 0; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; cursor: default">
+          <sc-if value="{{d.showLabel}}" hint-placeholder-val="{{false}}">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #F3F1EC">{{d.value}}</span>
+          </sc-if>
+          <span style="width: 24px; height: {{d.h}}px; box-sizing: border-box; border-radius: 4px 4px 0 0; background: {{d.fill}}; border: {{d.border}}"></span>
+          <span class="o06tip" style="position: absolute; left: 50%; bottom: calc({{d.h}}px + 10px); white-space: nowrap; padding: 6px 9px; border-radius: 8px; background: #F3F1EC; color: #0B0C0E; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; pointer-events: none; box-shadow: 0 6px 18px rgba(0,0,0,.5)">{{d.tip}}</span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr))">
+      <sc-for list="{{days}}" as="d" hint-placeholder-count="7">
+        <span style="text-align: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.08em; color: {{d.dayInk}}">{{d.day}}</span>
+      </sc-for>
+    </div>
+  </figure>
+
+  <section style="display: flex; flex-direction: column">
+    <span style="padding: 0 4px 6px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #8C8B86">TODAY'S JOBS</span>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 4px; border-bottom: 1px solid #24272C"><span style="width: 36px; height: 30px; flex: none; border-radius: 8px; background: #1A1C20; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #B5B3AD">LA</span><span style="flex: 1; min-width: 0; font-size: 15px">SZR → Dubai Marina</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">08:46</span><span style="width: 72px; text-align: right; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">480</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 4px; border-bottom: 1px solid #24272C"><span style="width: 36px; height: 30px; flex: none; border-radius: 8px; background: #1A1C20; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #B5B3AD">FB</span><span style="flex: 1; min-width: 0; font-size: 15px">Al Barsha → JLT</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">07:20</span><span style="width: 72px; text-align: right; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">190</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 4px; border-bottom: 1px solid #24272C"><span style="width: 36px; height: 30px; flex: none; border-radius: 8px; background: #1A1C20; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #B5B3AD">LA</span><span style="flex: 1; min-width: 0; font-size: 15px">Downtown → DIFC</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">06:05</span><span style="width: 72px; text-align: right; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">340</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 4px"><span style="width: 36px; height: 30px; flex: none; border-radius: 8px; background: #1A1C20; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #B5B3AD">FB</span><span style="flex: 1; min-width: 0; font-size: 15px">Deira → Al Quoz</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">04:40</span><span style="width: 72px; text-align: right; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">230</span></div>
+  </section>
+
+  <button type="button" style="margin-top: auto; height: 56px; border-radius: 16px; border: 0; background: #F2A93B; color: #1B1408; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer">Cash out AED 1,240</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const data = [
+      { day: 'MON', name: 'Monday', v: 560 },
+      { day: 'TUE', name: 'Tuesday', v: 880 },
+      { day: 'WED', name: 'Wednesday', v: 680 },
+      { day: 'THU', name: 'Thursday', v: 1110 },
+      { day: 'FRI', name: 'Friday', v: 810 },
+      { day: 'SAT', name: 'Today', v: 1240, today: true },
+      { day: 'SUN', name: 'Sunday', v: null }
+    ];
+    const max = 1240;
+    const plot = 112;
+    const fmt = (n) => n.toLocaleString('en-US');
+    const days = data.map((d) => {
+      const has = d.v !== null;
+      return {
+        day: d.today ? 'TODAY' : d.day,
+        value: has ? fmt(d.v) : '',
+        showLabel: !!d.today,
+        h: has ? Math.round((d.v / max) * plot) : 112,
+        fill: d.today ? '#F2A93B' : (has ? '#4A4D55' : 'transparent'),
+        border: has ? '0' : '1px dashed #3A3D44',
+        tip: has ? d.name + ' · AED ' + fmt(d.v) : 'Sunday · upcoming',
+        aria: has ? d.name + ', AED ' + fmt(d.v) : 'Sunday, upcoming',
+        dayInk: d.today ? '#F6B85A' : '#8C8B86'
+      };
+    });
+    return { days: days };
+  }
+}
+</script>
+</body>
+</html>

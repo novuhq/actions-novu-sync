@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design language — Midnight &amp; Beacon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+@keyframes beaconPulse{0%{transform:scale(.6);opacity:.55}100%{transform:scale(1.6);opacity:0}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1000px; box-sizing: border-box; padding: 64px 72px; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 48px">
+
+  <svg width="1440" height="1000" viewBox="0 0 1440 1000" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+    <defs>
+      <pattern id="mainGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+        <path d="M48 0V48M0 48H48" fill="none" stroke="#15171B" stroke-width="1"/>
+      </pattern>
+      <radialGradient id="mainGlow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#F2A93B" stop-opacity="0.16"/>
+        <stop offset="1" stop-color="#F2A93B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1440" height="1000" fill="url(#mainGrid)"/>
+    <circle cx="1160" cy="250" r="260" fill="url(#mainGlow)"/>
+    <g fill="none" stroke="#F2A93B">
+      <circle cx="1160" cy="250" r="44" stroke-opacity="0.55" stroke-width="1.2"/>
+      <circle cx="1160" cy="250" r="96" stroke-opacity="0.32" stroke-width="1"/>
+      <circle cx="1160" cy="250" r="156" stroke-opacity="0.18" stroke-width="1"/>
+      <circle cx="1160" cy="250" r="222" stroke-opacity="0.09" stroke-width="1"/>
+    </g>
+    <g stroke="#3A3D44" stroke-width="1">
+      <path d="M1160 10V70M1160 430V490M920 250H980M1340 250H1400"/>
+    </g>
+    <circle cx="1160" cy="250" r="9" fill="#F2A93B"/>
+    <circle cx="1160" cy="250" r="16" fill="none" stroke="#F2A93B" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="1186" y="232" fill="#8C8B86" font-family="'Geist Mono', ui-monospace, monospace" font-size="11" letter-spacing="1.4">25.0763° N · 55.1394° E</text>
+    <text x="1186" y="282" fill="#5D5F66" font-family="'Geist Mono', ui-monospace, monospace" font-size="11" letter-spacing="1.4">DUBAI MARINA</text>
+  </svg>
+
+  <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <svg width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Recovery mark">
+        <rect width="36" height="36" rx="10" fill="#F2A93B"/>
+        <circle cx="12" cy="24" r="3" fill="#1B1408"/>
+        <path d="M12 15a9 9 0 0 1 9 9M12 9a15 15 0 0 1 15 15" fill="none" stroke="#1B1408" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.16em; color: #B5B3AD">VEHICLE RECOVERY &amp; TOWING · DUBAI</span>
+    </div>
+    <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.16em; color: #8C8B86">CUSTOMER · OPERATOR · DISPATCH</span>
+  </header>
+
+  <section style="position: relative; display: flex; flex-direction: column; gap: 22px; max-width: 760px">
+    <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.16em; color: #F6B85A">DESIGN LANGUAGE</span>
+    <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 84px; line-height: 0.98; letter-spacing: -0.03em; color: #F3F1EC">Midnight<br>&amp; Beacon</h1>
+    <p style="margin: 0; font-size: 19px; line-height: 1.5; color: #B5B3AD; max-width: 600px; text-wrap: pretty">One composed, dark system across all three apps. Calm graphite surfaces, a single beacon amber for every action, and data set like an instrument panel — legible at the roadside at 2 a.m., refined enough for a supercar owner.</p>
+  </section>
+
+  <section style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; flex: 1; min-height: 0">
+
+    <div style="background: #131518; border: 1px solid #24272C; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; color: #8C8B86">COLOUR</span>
+      <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+        <div style="height: 64px; border-radius: 12px; background: #0B0C0E; border: 1px solid #30333A"></div>
+        <div style="height: 64px; border-radius: 12px; background: #131518; border: 1px solid #30333A"></div>
+        <div style="height: 64px; border-radius: 12px; background: #23262B"></div>
+        <div style="height: 64px; border-radius: 12px; background: #F3F1EC"></div>
+        <div style="height: 64px; border-radius: 12px; background: #F2A93B"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span>Midnight</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">#0B0C0E</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span>Graphite</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">#131518</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span>Steel</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">#23262B</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span>Ivory</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">#F3F1EC</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span style="color: #F6B85A">Beacon — actions &amp; live</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">#F2A93B</span></div>
+      </div>
+      <div style="height: 1px; background: #24272C"></div>
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; color: #8C8B86">STATUS · ALWAYS WITH A LABEL</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="display: inline-flex; align-items: center; gap: 7px; height: 28px; padding: 0 11px; border-radius: 999px; background: #1A1C20; font-size: 12px; color: #F3F1EC"><span style="width: 7px; height: 7px; border-radius: 50%; background: #5B9CF2"></span>En route</span>
+        <span style="display: inline-flex; align-items: center; gap: 7px; height: 28px; padding: 0 11px; border-radius: 999px; background: #1A1C20; font-size: 12px; color: #F3F1EC"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2EBD6B"></span>Complete</span>
+        <span style="display: inline-flex; align-items: center; gap: 7px; height: 28px; padding: 0 11px; border-radius: 999px; background: #2A1614; font-size: 12px; color: #FFB4AC"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F0554A"></span>Unassigned</span>
+      </div>
+    </div>
+
+    <div style="background: #131518; border: 1px solid #24272C; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; color: #8C8B86">TYPOGRAPHY</span>
+      <div style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 92px; line-height: 0.9; letter-spacing: -0.04em">Aa</div>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 20px; letter-spacing: -0.01em">Archivo Expanded</span>
+        <span style="font-size: 13px; color: #8C8B86">Headlines, prices, ETAs</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 20px; font-weight: 500">Instrument Sans</span>
+        <span style="font-size: 13px; color: #8C8B86">Interface and body copy</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; letter-spacing: 0.1em">GEIST MONO · D-12345</span>
+        <span style="font-size: 13px; color: #8C8B86">Labels, plates, coordinates, data</span>
+      </div>
+      <div style="margin-top: auto; display: flex; align-items: baseline; gap: 10px; padding-top: 18px; border-top: 1px solid #24272C">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86; letter-spacing: 0.08em">AED</span>
+        <span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 44px; letter-spacing: -0.03em; line-height: 1">653</span>
+      </div>
+    </div>
+
+    <div style="background: #131518; border: 1px solid #24272C; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; color: #8C8B86">COMPONENTS</span>
+      <button type="button" style="height: 56px; border: 0; border-radius: 16px; background: #F2A93B; color: #1B1408; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer">Request recovery<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button type="button" style="height: 56px; border: 1px solid #30333A; border-radius: 16px; background: #1A1C20; color: #F3F1EC; font-family: inherit; font-size: 16px; font-weight: 500; cursor: pointer">Message operator</button>
+      <div style="display: flex; gap: 8px">
+        <button type="button" style="flex: 1; height: 48px; border-radius: 14px; border: 1px solid #30333A; background: transparent; color: #F3F1EC; font-family: inherit; font-size: 15px; cursor: pointer">AED 20</button>
+        <button type="button" style="flex: 1; height: 48px; border-radius: 14px; border: 1.5px solid #F2A93B; background: #2B2213; color: #F6B85A; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">AED 50</button>
+        <button type="button" style="flex: 1; height: 48px; border-radius: 14px; border: 1px solid #30333A; background: transparent; color: #F3F1EC; font-family: inherit; font-size: 15px; cursor: pointer">AED 100</button>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 16px; background: #1A1C20">
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 15px; font-weight: 600">You're online</span>
+          <span style="font-size: 12px; color: #8C8B86">Toggle · operator app</span>
+        </div>
+        <span style="width: 52px; height: 32px; border-radius: 999px; background: #F2A93B; position: relative; display: block"><span style="position: absolute; top: 3px; right: 3px; width: 26px; height: 26px; border-radius: 50%; background: #1B1408"></span></span>
+      </div>
+      <p style="margin: auto 0 0; font-size: 13px; line-height: 1.5; color: #8C8B86">Radius 16 on controls, 24 on cards, 28 on sheets. Hairline borders instead of shadows; amber never decorates.</p>
+    </div>
+
+    <div style="background: #131518; border: 1px solid #24272C; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; color: #8C8B86">FOUR RECOVERY CLASSES</span>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid #24272C">
+        <span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #1A1C20; border: 1px solid #30333A; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #B5B3AD">WL</span>
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Wheel-Lift</span><span style="font-size: 12px; color: #8C8B86">Everyday cars · urban access</span></div>
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">150</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid #24272C">
+        <span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #1A1C20; border: 1px solid #30333A; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #B5B3AD">FB</span>
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Flatbed · Tilt &amp; Slide</span><span style="font-size: 12px; color: #8C8B86">4×4s · vans · non-runners</span></div>
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">250</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid #24272C">
+        <span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #1A1C20; border: 1px solid #30333A; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #B5B3AD">LA</span>
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Low-Angle Sports</span><span style="font-size: 12px; color: #8C8B86">Lowered supercars · no scraping</span></div>
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">450</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0">
+        <span style="width: 44px; height: 44px; flex: none; border-radius: 12px; background: #2B2213; border: 1px solid #F2A93B; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.06em; color: #F6B85A">EN</span>
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Enclosed Transporter</span><span style="font-size: 12px; color: #8C8B86">Supercars · classics · full cover</span></div>
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">800</span>
+      </div>
+      <span style="margin-top: auto; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; color: #8C8B86">PRICES FROM · AED</span>
+    </div>
+
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

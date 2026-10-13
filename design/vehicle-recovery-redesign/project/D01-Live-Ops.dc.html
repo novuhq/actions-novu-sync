@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dispatch — Live operations</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+input::placeholder{color:#8C8B86}
+@keyframes livePulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes jobPulse{0%{r:12;opacity:.9}100%{r:34;opacity:0}}
+</style>
+</helmet>
+<div style="min-height: 100vh; box-sizing: border-box; display: flex; flex-wrap: wrap; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif; font-size: 14px">
+
+  <nav aria-label="Dispatch" style="flex: 1 1 220px; box-sizing: border-box; padding: 28px 20px; background: #0E0F12; border-right: 1px solid #1E2025; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; align-items: center; gap: 12px; padding: 0 8px">
+      <svg width="32" height="32" viewBox="0 0 36 36" role="img" aria-label="Recovery mark"><rect width="36" height="36" rx="10" fill="#F2A93B"/><circle cx="12" cy="24" r="3" fill="#1B1408"/><path d="M12 15a9 9 0 0 1 9 9M12 9a15 15 0 0 1 15 15" fill="none" stroke="#1B1408" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 16px; letter-spacing: -0.01em">Dispatch</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; letter-spacing: 0.16em; color: #8C8B86">CONTROL ROOM</span></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 4px">
+      <a href="D01-Live-Ops.dc.html" aria-current="page" style="flex: 1 1 160px; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; background: #1A1C20; color: #F3F1EC; text-decoration: none; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2A93B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8.5"/></svg>Live operations</a>
+      <a href="D02-Assign.dc.html" style="flex: 1 1 160px; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; color: #B5B3AD; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>Jobs &amp; assignment</a>
+      <a href="D02-Assign.dc.html" style="flex: 1 1 160px; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; color: #B5B3AD; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Fleet &amp; roster</a>
+      <a href="D03-Analytics.dc.html" style="flex: 1 1 160px; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; color: #B5B3AD; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-3"/></svg>Analytics</a>
+    </div>
+    <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 14px; background: #131518; border: 1px solid #1E2025">
+      <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; background: #23262B; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px">D</span>
+      <div style="display: flex; flex-direction: column; gap: 1px; min-width: 0"><span style="font-weight: 600; font-size: 13px">Dispatcher</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; letter-spacing: 0.12em; color: #8C8B86">ON SHIFT</span></div>
+    </div>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 28px 32px; display: flex; flex-direction: column; gap: 20px">
+
+    <header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #8C8B86"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2EBD6B; animation: livePulse 1.6s ease-in-out infinite"></span>LIVE · DUBAI</span>
+        <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 30px; line-height: 1.05; letter-spacing: -0.03em">Live operations</h1>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+        <label for="d01search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search jobs, trucks or plates</label>
+        <span style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border-radius: 12px; background: #131518; border: 1px solid #24272C; min-width: 0; flex: 1 1 260px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C8B86" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><input id="d01search" type="search" placeholder="Search jobs, trucks or plates" style="flex: 1; min-width: 0; border: 0; background: transparent; color: #F3F1EC; font-family: inherit; font-size: 14px; outline: none"></span>
+        <button type="button" style="height: 44px; padding: 0 18px; border-radius: 12px; border: 0; background: #F2A93B; color: #1B1408; font-family: inherit; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New job</button>
+      </div>
+    </header>
+
+    <section aria-label="Right now" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; border-radius: 18px; background: #131518; border: 1px solid #24272C"><span style="font-size: 13px; color: #B5B3AD">Live jobs</span><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 30px; letter-spacing: -0.03em; line-height: 1">6</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; border-radius: 18px; background: #1E1412; border: 1px solid #4A2420"><span style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; color: #FFB4AC">Unassigned<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em">WAITING 2 MIN</span></span><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 30px; letter-spacing: -0.03em; line-height: 1">1</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; border-radius: 18px; background: #131518; border: 1px solid #24272C"><span style="font-size: 13px; color: #B5B3AD">Trucks available</span><span style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 30px; letter-spacing: -0.03em; line-height: 1">11</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">/ 18</span></span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; border-radius: 18px; background: #131518; border: 1px solid #24272C"><span style="font-size: 13px; color: #B5B3AD">Avg response · 30 days</span><span style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 30px; letter-spacing: -0.03em; line-height: 1">4:12</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8C8B86">MIN</span></span></div>
+    </section>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+
+      <section aria-label="Operations map" style="flex: 999 1 560px; min-width: 0; position: relative; height: 640px; border-radius: 22px; overflow: hidden; background: #0F1114; border: 1px solid #24272C">
+        <svg width="100%" height="100%" viewBox="0 0 820 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map of Dubai with six live jobs and eighteen trucks" style="display: block">
+          <defs>
+            <pattern id="d01Streets" width="30" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(-26.6)">
+              <path d="M30 0V24M0 24H30" fill="none" stroke="#181B20" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="820" height="640" fill="#0F1114"/>
+          <rect width="820" height="640" fill="url(#d01Streets)"/>
+          <path d="M0 700L820 290" stroke="#202329" stroke-width="7" fill="none"/>
+          <path d="M100 0L420 640M330 0L650 640M560 0L820 520" stroke="#1E2126" stroke-width="5" fill="none"/>
+          <path d="M0 600L820 190" stroke="#2B2F36" stroke-width="12" fill="none"/>
+          <path d="M0 600L820 190" stroke="#3C414A" stroke-width="1" fill="none"/>
+          <polygon points="0,0 820,0 820,60 0,470" fill="#091017"/>
+          <path d="M0 470L820 60" stroke="#16222C" stroke-width="1.5" fill="none"/>
+          <g fill="none" stroke="#17232D" stroke-width="3" stroke-linecap="round">
+            <path d="M120 300A110 110 0 0 1 320 250"/>
+            <path d="M250 352L214 250"/>
+            <path d="M214 250L160 238M218 262L166 262M224 276L172 288M230 292L182 314M210 240L176 206M222 254L262 222M228 268L270 246M234 284L276 270"/>
+          </g>
+          <g font-family="'Geist Mono', ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#5D6068">
+            <text x="96" y="458">MARINA</text>
+            <text x="120" y="574">JLT</text>
+            <text x="320" y="548">AL BARSHA</text>
+            <text x="290" y="380">AL SUFOUH</text>
+            <text x="490" y="470">AL QUOZ</text>
+            <text x="606" y="250">DIFC</text>
+            <text x="640" y="340">DOWNTOWN</text>
+            <text x="744" y="122">DEIRA</text>
+          </g>
+          <text x="80" y="110" font-family="'Geist Mono', ui-monospace, monospace" font-size="11" letter-spacing="3" fill="#2A3946">ARABIAN GULF</text>
+          <text x="466" y="352" transform="rotate(-26.6 466 352)" font-family="'Geist Mono', ui-monospace, monospace" font-size="9" letter-spacing="2" fill="#555861">SHEIKH ZAYED RD</text>
+
+          <g stroke="#0F1114" stroke-width="2.5">
+            <circle cx="190" cy="522" r="6" fill="#2EBD6B"/>
+            <circle cx="236" cy="474" r="6" fill="#2EBD6B"/>
+            <circle cx="300" cy="430" r="6" fill="#2EBD6B"/>
+            <circle cx="520" cy="384" r="6" fill="#2EBD6B"/>
+            <circle cx="684" cy="232" r="6" fill="#2EBD6B"/>
+            <circle cx="566" cy="520" r="6" fill="#2EBD6B"/>
+            <circle cx="420" cy="470" r="6" fill="#2EBD6B"/>
+            <circle cx="262" cy="584" r="6" fill="#2EBD6B"/>
+            <circle cx="724" cy="318" r="6" fill="#2EBD6B"/>
+            <circle cx="86" cy="560" r="6" fill="#2EBD6B"/>
+            <circle cx="640" cy="404" r="6" fill="#2EBD6B"/>
+            <circle cx="480" cy="560" r="6" fill="#5D5F66"/>
+            <circle cx="756" cy="262" r="6" fill="#5D5F66"/>
+          </g>
+
+          <circle cx="150" cy="545" r="12" fill="none" stroke="#F0554A" stroke-width="2" style="animation: jobPulse 1.8s ease-out infinite"/>
+          <g font-family="'Geist Mono', ui-monospace, monospace" font-size="9" font-weight="600" text-anchor="middle" letter-spacing="0.5">
+            <g transform="translate(150 545)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#F0554A" stroke="#0F1114" stroke-width="2.5"/><text y="3.5" fill="#1B0B09">FB</text></g>
+            <g transform="translate(430 385)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#B5B3AD" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">LA</text></g>
+            <g transform="translate(612 278)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#5B9CF2" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">EN</text></g>
+            <g transform="translate(110 440)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#5B9CF2" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">LA</text></g>
+            <g transform="translate(770 150)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#F2A93B" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">WL</text></g>
+            <g transform="translate(360 520)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#2EBD6B" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">FB</text></g>
+          </g>
+          <path d="M190 522L150 545" stroke="#F0554A" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
+        </svg>
+
+        <div style="position: absolute; left: 16px; top: 16px; display: flex; flex-wrap: wrap; gap: 6px">
+          <span style="height: 32px; padding: 0 12px; border-radius: 10px; background: rgba(19,21,24,.92); border: 1px solid #2A2D33; display: inline-flex; align-items: center; gap: 8px; font-size: 12px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #2EBD6B"></span>Available · 11</span>
+          <span style="height: 32px; padding: 0 12px; border-radius: 10px; background: rgba(19,21,24,.92); border: 1px solid #2A2D33; display: inline-flex; align-items: center; gap: 8px; font-size: 12px"><span style="width: 9px; height: 9px; border-radius: 3px; border: 1.6px solid #5B9CF2; box-sizing: border-box"></span>On job · 5</span>
+          <span style="height: 32px; padding: 0 12px; border-radius: 10px; background: rgba(19,21,24,.92); border: 1px solid #2A2D33; display: inline-flex; align-items: center; gap: 8px; font-size: 12px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #5D5F66"></span>Offline · 2</span>
+        </div>
+        <div style="position: absolute; right: 16px; top: 16px; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; border: 1px solid #2A2D33">
+          <button type="button" aria-label="Zoom in" style="width: 44px; height: 44px; border: 0; background: rgba(19,21,24,.92); color: #F3F1EC; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <button type="button" aria-label="Zoom out" style="width: 44px; height: 44px; border: 0; border-top: 1px solid #2A2D33; background: rgba(19,21,24,.92); color: #F3F1EC; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+        </div>
+        <a href="D02-Assign.dc.html" style="position: absolute; left: 16px; bottom: 16px; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(19,21,24,.95); border: 1px solid #4A2420; color: #F3F1EC; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,.5)">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #F0554A; animation: livePulse 1.2s ease-in-out infinite"></span>
+          <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Flatbed · JLT needs a truck</span><span style="font-size: 12px; color: #B5B3AD">Saeed M. is 1.8 km away · free</span></span>
+          <span style="margin-left: 8px; height: 32px; padding: 0 12px; border-radius: 9px; background: #F2A93B; color: #1B1408; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center">Assign</span>
+        </a>
+      </section>
+
+      <section aria-label="Live jobs" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; border-radius: 22px; background: #131518; border: 1px solid #24272C; overflow: hidden">
+        <div style="display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 14px; border-bottom: 1px solid #24272C">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px"><h2 style="margin: 0; font-size: 16px; font-weight: 600">Live jobs</h2><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #8C8B86">{{countLabel}}</span></div>
+          <div style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: #0E0F12" role="group" aria-label="Filter jobs">
+            <sc-for list="{{filters}}" as="f" hint-placeholder-count="3">
+              <button type="button" onClick="{{f.pick}}" aria-pressed="{{f.on}}" style="flex: 1; height: 36px; border-radius: 9px; border: 0; background: {{f.bg}}; color: {{f.ink}}; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer">{{f.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <ul style="margin: 0; padding: 6px 8px; list-style: none; display: flex; flex-direction: column; gap: 2px">
+          <sc-for list="{{jobs}}" as="j" hint-placeholder-count="6">
+            <li style="display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 0 10px; border-radius: 14px; background: {{j.rowBg}}">
+              <span style="width: 38px; height: 38px; flex: none; border-radius: 11px; background: #1A1C20; border: 1px solid #2A2D33; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.04em; color: #B5B3AD">{{j.code}}</span>
+              <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{j.title}}</span><span style="font-size: 12px; color: #8C8B86; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{j.meta}}</span></span>
+              <span style="flex: none; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: {{j.pillBg}}; color: {{j.pillInk}}; font-size: 12px; font-weight: 500"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{j.dot}}"></span>{{j.status}}</span>
+            </li>
+          </sc-for>
+        </ul>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding: 16px 18px 18px; border-top: 1px solid #24272C">
+          <div style="display: flex; justify-content: space-between; gap: 12px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #8C8B86">FLEET · 18 TRUCKS</span><a href="D02-Assign.dc.html" style="font-size: 13px; font-weight: 600; text-decoration: none">Roster</a></div>
+          <div style="display: flex; gap: 2px; height: 8px; border-radius: 4px; overflow: hidden" role="img" aria-label="11 available, 5 on job, 2 offline">
+            <span style="flex: 11; background: #2EBD6B"></span><span style="flex: 5; background: #5B9CF2"></span><span style="flex: 2; background: #5D5F66"></span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #B5B3AD"><span>11 available</span><span>5 on job</span><span>2 offline</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const filter = (this.state && this.state.filter) || 'all';
+    const S = {
+      unassigned: { label: 'Unassigned', bg: '#2A1614', ink: '#FFB4AC', dot: '#F0554A' },
+      assigned: { label: 'Assigned', bg: '#1F2125', ink: '#F3F1EC', dot: '#B5B3AD' },
+      enroute: { label: 'En route', bg: '#13202F', ink: '#A9CBFF', dot: '#5B9CF2' },
+      loading: { label: 'Loading', bg: '#2B2213', ink: '#F6B85A', dot: '#F2A93B' },
+      complete: { label: 'Complete', bg: '#10251A', ink: '#8FE3B4', dot: '#2EBD6B' }
+    };
+    const all = [
+      { code: 'FB', title: 'Flatbed · JLT', meta: 'Range Rover · non-runner · 2 min', s: 'unassigned' },
+      { code: 'LA', title: 'Low-Angle · SZR', meta: 'Ahmed K. · ETA 6 min', s: 'assigned' },
+      { code: 'EN', title: 'Enclosed · DIFC', meta: 'Yusuf R. · ETA 12 min', s: 'enroute' },
+      { code: 'LA', title: 'Low-Angle · Marina', meta: 'Imran S. · ETA 9 min', s: 'enroute' },
+      { code: 'WL', title: 'Wheel-Lift · Deira', meta: 'Omar F. · on site', s: 'loading' },
+      { code: 'FB', title: 'Flatbed · Al Barsha', meta: 'Khalid N. · handed over', s: 'complete' }
+    ];
+    const visible = all.filter((j) => {
+      if (filter === 'unassigned') return j.s === 'unassigned';
+      if (filter === 'active') return j.s !== 'unassigned' && j.s !== 'complete';
+      return true;
+    });
+    const jobs = visible.map((j) => ({
+      code: j.code,
+      title: j.title,
+      meta: j.meta,
+      status: S[j.s].label,
+      pillBg: S[j.s].bg,
+      pillInk: S[j.s].ink,
+      dot: S[j.s].dot,
+      rowBg: j.s === 'unassigned' ? '#1E1412' : 'transparent'
+    }));
+    const filters = [
+      { id: 'all', label: 'All · 6' },
+      { id: 'unassigned', label: 'Unassigned · 1' },
+      { id: 'active', label: 'Active · 4' }
+    ].map((f) => ({
+      label: f.label,
+      on: f.id === filter,
+      bg: f.id === filter ? '#23262B' : 'transparent',
+      ink: f.id === filter ? '#F3F1EC' : '#8C8B86',
+      pick: () => this.setState({ filter: f.id })
+    }));
+    return { jobs: jobs, filters: filters, countLabel: visible.length + ' SHOWN' };
+  }
+}
+</script>
+</body>
+</html>

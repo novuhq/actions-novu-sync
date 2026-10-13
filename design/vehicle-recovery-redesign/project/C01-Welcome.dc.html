@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+@keyframes beaconPulse{0%{transform:scale(.35);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif">
+
+  <svg width="390" height="844" viewBox="0 0 390 844" aria-hidden="true" style="position: absolute; inset: 0; display: block">
+    <defs>
+      <pattern id="c01Streets" width="34" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-34)">
+        <path d="M34 0V26M0 26H34" fill="none" stroke="#181B20" stroke-width="1"/>
+      </pattern>
+      <linearGradient id="c01Scrim" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0B0C0E" stop-opacity="0"/>
+        <stop offset="0.5" stop-color="#0B0C0E" stop-opacity="1"/>
+      </linearGradient>
+      <radialGradient id="c01Glow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#F2A93B" stop-opacity="0.22"/>
+        <stop offset="1" stop-color="#F2A93B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="390" height="844" fill="#0E1013"/>
+    <rect width="390" height="844" fill="url(#c01Streets)"/>
+    <path d="M-28 51L364 632M132 -49L524 532M-120 260L230 780" stroke="#1F2228" stroke-width="5" fill="none"/>
+    <path d="M-20 340L410 50" stroke="#22262C" stroke-width="6" fill="none"/>
+    <path d="M-20 408L410 118" stroke="#2A2E35" stroke-width="12" fill="none"/>
+    <path d="M-20 408L410 118" stroke="#3A3F47" stroke-width="1.2" fill="none"/>
+    <polygon points="0,0 390,0 390,40 0,300" fill="#091017"/>
+    <path d="M0 300L390 40" stroke="#16222C" stroke-width="1.5" fill="none"/>
+    <g fill="none" stroke="#17232D" stroke-width="2" stroke-linecap="round">
+      <path d="M18 92A88 88 0 0 1 176 56"/>
+      <path d="M118 196L92 116"/>
+      <path d="M92 116L52 104M95 126L56 122M99 138L62 140M104 152L70 158M89 108L60 86M98 114L130 92M102 128L138 112M106 142L144 132"/>
+    </g>
+    <text x="40" y="38" fill="#2A3946" font-family="'Geist Mono', ui-monospace, monospace" font-size="9" letter-spacing="2">ARABIAN GULF</text>
+    <text x="236" y="210" transform="rotate(-34 236 210)" fill="#4D5058" font-family="'Geist Mono', ui-monospace, monospace" font-size="8" letter-spacing="1.6">SHEIKH ZAYED RD</text>
+    <circle cx="215" cy="250" r="150" fill="url(#c01Glow)"/>
+    <g fill="none" stroke="#F2A93B">
+      <circle cx="215" cy="250" r="34" stroke-opacity="0.5" stroke-width="1.2"/>
+      <circle cx="215" cy="250" r="74" stroke-opacity="0.26"/>
+      <circle cx="215" cy="250" r="120" stroke-opacity="0.12"/>
+    </g>
+    <path d="M215 112V136M215 364V388M77 250H101M329 250H353" stroke="#3A3D44" stroke-width="1"/>
+    <rect y="360" width="390" height="484" fill="url(#c01Scrim)"/>
+  </svg>
+
+  <div aria-hidden="true" style="position: absolute; left: 115px; top: 150px; width: 200px; height: 200px; border-radius: 50%; border: 1.5px solid #F2A93B; animation: beaconPulse 3.2s cubic-bezier(.2,.6,.3,1) infinite"></div>
+  <div aria-hidden="true" style="position: absolute; left: 115px; top: 150px; width: 200px; height: 200px; border-radius: 50%; border: 1.5px solid #F2A93B; animation: beaconPulse 3.2s cubic-bezier(.2,.6,.3,1) 1.6s infinite"></div>
+  <div aria-hidden="true" style="position: absolute; left: 206px; top: 241px; width: 18px; height: 18px; border-radius: 50%; background: #F2A93B; box-shadow: 0 0 0 5px #0B0C0E, 0 0 0 6px rgba(242,169,59,.5), 0 0 28px 6px rgba(242,169,59,.35)"></div>
+  <span style="position: absolute; left: 238px; top: 270px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.12em; color: #8C8B86; line-height: 1.6">25.0763° N<br>55.1394° E</span>
+
+  <header style="position: absolute; left: 24px; right: 24px; top: 62px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <svg width="30" height="30" viewBox="0 0 36 36" role="img" aria-label="Recovery mark">
+        <rect width="36" height="36" rx="10" fill="#F2A93B"/>
+        <circle cx="12" cy="24" r="3" fill="#1B1408"/>
+        <path d="M12 15a9 9 0 0 1 9 9M12 9a15 15 0 0 1 15 15" fill="none" stroke="#1B1408" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #B5B3AD">VEHICLE RECOVERY</span>
+    </div>
+    <span style="display: inline-flex; align-items: center; gap: 7px; height: 28px; padding: 0 12px; border-radius: 999px; background: rgba(19,21,24,.8); border: 1px solid #24272C; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.12em; color: #B5B3AD"><span style="width: 6px; height: 6px; border-radius: 50%; background: #2EBD6B"></span>24/7 · DUBAI</span>
+  </header>
+
+  <main style="position: absolute; left: 24px; right: 24px; bottom: 40px; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #F6B85A">PREMIUM ROADSIDE RECOVERY</span>
+      <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 40px; line-height: 1.02; letter-spacing: -0.035em; color: #F3F1EC">Recovery,<br>made simple.</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #B5B3AD; text-wrap: pretty">Premium towing across Dubai — day or night. From daily drives to supercars, the right truck every time.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #24272C; border-bottom: 1px solid #24272C">
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; color: #8C8B86">WHEEL-LIFT</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">150</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0 14px 12px; border-left: 1px solid #24272C"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; color: #8C8B86">FLATBED</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">250</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0 14px 12px; border-left: 1px solid #24272C"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; color: #8C8B86">LOW-ANGLE</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">450</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0 14px 12px; border-left: 1px solid #24272C"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; color: #F6B85A">ENCLOSED</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F3F1EC">800</span></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <a href="C02-Request.dc.html" style="height: 56px; border-radius: 16px; background: #F2A93B; color: #1B1408; text-decoration: none; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px">Get started<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button type="button" style="height: 56px; border-radius: 16px; border: 1px solid #30333A; background: #131518; color: #F3F1EC; font-family: inherit; font-size: 16px; font-weight: 500; cursor: pointer">I already have an account</button>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

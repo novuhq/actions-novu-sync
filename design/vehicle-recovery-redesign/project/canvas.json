@@ -1,0 +1,66 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-10-13T11:30:00Z" },
+  "title": "Vehicle Recovery — Premium App Redesign",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 1440, "h": 1000, "title": "Design language" },
+
+    "C01-Welcome.dc.html": { "x": 0, "y": 1380, "w": 390, "h": 844, "title": "01 · Welcome", "radius": 48, "is_interactive": true },
+    "C02-Request.dc.html": { "x": 470, "y": 1380, "w": 390, "h": 844, "title": "02 · Request", "radius": 48, "is_interactive": true },
+    "C03-Recovery-Type.dc.html": { "x": 940, "y": 1380, "w": 390, "h": 844, "title": "03 · Recovery type", "radius": 48, "is_interactive": true },
+    "C04-Confirm.dc.html": { "x": 1410, "y": 1380, "w": 390, "h": 844, "title": "04 · Confirm & fare", "radius": 48, "is_interactive": true },
+    "C05-Payment.dc.html": { "x": 1880, "y": 1380, "w": 390, "h": 844, "title": "05 · Payment", "radius": 48, "is_interactive": true },
+    "C06-Tracking.dc.html": { "x": 2350, "y": 1380, "w": 390, "h": 844, "title": "06 · Live tracking", "radius": 48, "is_interactive": true },
+
+    "C07-Securing.dc.html": { "x": 0, "y": 2604, "w": 390, "h": 844, "title": "07 · Securing", "radius": 48, "is_interactive": true },
+    "C08-Rate.dc.html": { "x": 470, "y": 2604, "w": 390, "h": 844, "title": "08 · Rate & tip", "radius": 48, "is_interactive": true },
+    "C09-Premium.dc.html": { "x": 940, "y": 2604, "w": 390, "h": 844, "title": "09 · Premium care", "radius": 48, "is_interactive": true },
+    "C10-History.dc.html": { "x": 1410, "y": 2604, "w": 390, "h": 844, "title": "10 · History & receipts", "radius": 48, "is_interactive": true },
+    "C11-Schedule.dc.html": { "x": 1880, "y": 2604, "w": 390, "h": 844, "title": "11 · Scheduled transport", "radius": 48, "is_interactive": true },
+    "C12-Support.dc.html": { "x": 2350, "y": 2604, "w": 390, "h": 844, "title": "12 · Concierge support", "radius": 48, "is_interactive": true },
+
+    "O01-Go-Online.dc.html": { "x": 0, "y": 3828, "w": 390, "h": 844, "title": "Operator · Go online", "radius": 48, "is_interactive": true },
+    "O02-Incoming-Job.dc.html": { "x": 470, "y": 3828, "w": 390, "h": 844, "title": "Operator · Incoming job", "radius": 48, "is_interactive": true },
+    "O03-Navigation.dc.html": { "x": 940, "y": 3828, "w": 390, "h": 844, "title": "Operator · Navigation", "radius": 48, "is_interactive": true },
+    "O04-Loading.dc.html": { "x": 1410, "y": 3828, "w": 390, "h": 844, "title": "Operator · Guided loading", "radius": 48, "is_interactive": true },
+    "O05-Handover.dc.html": { "x": 1880, "y": 3828, "w": 390, "h": 844, "title": "Operator · Handover & signature", "radius": 48, "is_interactive": true },
+    "O06-Earnings.dc.html": { "x": 2350, "y": 3828, "w": 390, "h": 844, "title": "Operator · Earnings", "radius": 48, "is_interactive": true },
+
+    "D01-Live-Ops.dc.html": { "x": 0, "y": 5052, "w": 1440, "h": 980, "title": "Dispatch · Live operations", "expand": "fill", "is_interactive": true },
+    "D02-Assign.dc.html": { "x": 1520, "y": 5052, "w": 1440, "h": 980, "title": "Dispatch · Assignment & roster", "expand": "fill", "is_interactive": true },
+    "D03-Analytics.dc.html": { "x": 3040, "y": 5052, "w": 1440, "h": 980, "title": "Dispatch · Fleet analytics", "expand": "fill", "is_interactive": true }
+  },
+  "order": [
+    "Main.dc.html",
+    "C01-Welcome.dc.html",
+    "C02-Request.dc.html",
+    "C03-Recovery-Type.dc.html",
+    "C04-Confirm.dc.html",
+    "C05-Payment.dc.html",
+    "C06-Tracking.dc.html",
+    "C07-Securing.dc.html",
+    "C08-Rate.dc.html",
+    "C09-Premium.dc.html",
+    "C10-History.dc.html",
+    "C11-Schedule.dc.html",
+    "C12-Support.dc.html",
+    "O01-Go-Online.dc.html",
+    "O02-Incoming-Job.dc.html",
+    "O03-Navigation.dc.html",
+    "O04-Loading.dc.html",
+    "O05-Handover.dc.html",
+    "O06-Earnings.dc.html",
+    "D01-Live-Ops.dc.html",
+    "D02-Assign.dc.html",
+    "D03-Analytics.dc.html"
+  ],
+  "notes": {
+    "rowCustomerA": { "x": 0, "y": 1080, "text": "Customer app — request, choose, pay, track", "kind": "title1", "maxW": 2740 },
+    "rowCustomerB": { "x": 0, "y": 2304, "text": "Customer app — hand-off, premium care & after-care", "kind": "title1", "maxW": 2740 },
+    "rowOperator": { "x": 0, "y": 3528, "text": "Operator app — the driver's day", "kind": "title1", "maxW": 2740 },
+    "rowDispatch": { "x": 0, "y": 4752, "text": "Dispatch & fleet — the operations canvas (web)", "kind": "title1", "maxW": 4480 }
+  },
+  "designSystems": []
+}

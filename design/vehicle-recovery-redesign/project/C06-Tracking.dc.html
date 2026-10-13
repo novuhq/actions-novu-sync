@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Live tracking</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0C0E}
+a{color:#F6B85A}a:hover{color:#FFD08A}
+@keyframes locPulse{0%{transform:scale(.3);opacity:.8}100%{transform:scale(1);opacity:0}}
+@keyframes routeFlow{to{stroke-dashoffset:-24}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #0B0C0E; color: #F3F1EC; font-family: 'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif">
+
+  <svg width="390" height="600" viewBox="0 0 390 600" aria-hidden="true" style="position: absolute; left: 0; top: 0; display: block">
+    <defs>
+      <pattern id="c06Streets" width="34" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-34)">
+        <path d="M34 0V26M0 26H34" fill="none" stroke="#1A1D22" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="390" height="600" fill="#0F1114"/>
+    <rect width="390" height="600" fill="url(#c06Streets)"/>
+    <polygon points="120,420 168,388 204,440 156,472" fill="#11171A"/>
+    <path d="M300 309.2L208 172.8M300 309.2L392 445.6M140 300L32 140M140 300L240 448" stroke="#20242A" stroke-width="5" fill="none"/>
+    <path d="M-20 445L410 155" stroke="#23272D" stroke-width="6" fill="none"/>
+    <path d="M-20 525L410 235" stroke="#2B2F36" stroke-width="13" fill="none"/>
+    <path d="M-20 525L410 235" stroke="#3C414A" stroke-width="1.2" fill="none"/>
+    <polygon points="0,0 390,0 390,110 0,372" fill="#091017"/>
+    <path d="M0 372L390 110" stroke="#16222C" stroke-width="1.5" fill="none"/>
+    <text x="30" y="200" fill="#2A3946" font-family="'Geist Mono', ui-monospace, monospace" font-size="9" letter-spacing="2">ARABIAN GULF</text>
+    <text x="40" y="470" transform="rotate(-34 40 470)" fill="#555861" font-family="'Geist Mono', ui-monospace, monospace" font-size="8" letter-spacing="1.6">SHEIKH ZAYED RD</text>
+    <text x="96" y="386" transform="rotate(-34 96 386)" fill="#474A52" font-family="'Geist Mono', ui-monospace, monospace" font-size="8" letter-spacing="1.6">AL SUFOUH RD</text>
+    <path d="M362.4 187.1L262.9 254.2L300 309.2L195 380" stroke="#F2A93B" stroke-opacity="0.2" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M362.4 187.1L262.9 254.2L300 309.2L195 380" stroke="#F2A93B" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M362.4 187.1L262.9 254.2L300 309.2L195 380" stroke="#1B1408" stroke-width="1.5" stroke-dasharray="2 10" fill="none" stroke-linecap="round" style="animation: routeFlow 1.2s linear infinite"/>
+    <g transform="translate(362.4 187.1) rotate(146)">
+      <rect x="-17" y="-11" width="34" height="22" rx="7" fill="#F2A93B" stroke="#0B0C0E" stroke-width="3"/>
+      <path d="M5 -6L11 0L5 6" fill="none" stroke="#1B1408" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M-9 -4H1M-9 0H1M-9 4H1" stroke="#1B1408" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <div aria-hidden="true" style="position: absolute; left: 145px; top: 330px; width: 100px; height: 100px; border-radius: 50%; background: rgba(243,241,236,.1); border: 1px solid rgba(243,241,236,.5); animation: locPulse 2.6s ease-out infinite"></div>
+  <div aria-hidden="true" style="position: absolute; left: 187px; top: 372px; width: 16px; height: 16px; border-radius: 50%; background: #F3F1EC; box-shadow: 0 0 0 4px #0B0C0E, 0 0 0 5px rgba(243,241,236,.5)"></div>
+
+  <a href="C07-Securing.dc.html" style="position: absolute; left: 20px; right: 20px; top: 58px; box-sizing: border-box; display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 22px; background: rgba(19,21,24,.94); border: 1px solid #2A2D33; color: #F3F1EC; text-decoration: none; box-shadow: 0 16px 40px rgba(0,0,0,.5)">
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #8C8B86">ARRIVING IN</span>
+      <span style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 38px; letter-spacing: -0.04em; line-height: 1; color: #F6B85A">6</span><span style="font-size: 16px; font-weight: 600">min</span></span>
+    </div>
+    <span aria-hidden="true" style="width: 1px; align-self: stretch; background: #2A2D33"></span>
+    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 15px; font-weight: 600">Ahmed is on the way</span>
+      <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; color: #B5B3AD">ETA 9:54 · LOW-ANGLE</span>
+    </div>
+  </a>
+
+  <section style="position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; padding: 10px 20px 34px; border-radius: 28px 28px 0 0; background: #131518; border-top: 1px solid #262930; box-shadow: 0 -20px 50px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 20px">
+    <span aria-hidden="true" style="align-self: center; width: 38px; height: 5px; border-radius: 3px; background: #34373E"></span>
+
+    <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px" aria-label="Recovery progress">
+      <li style="display: flex; flex-direction: column; gap: 8px"><span style="height: 4px; border-radius: 2px; background: #F2A93B"></span><span style="font-size: 12px; color: #B5B3AD">Assigned</span></li>
+      <li style="display: flex; flex-direction: column; gap: 8px" aria-current="step"><span style="height: 4px; border-radius: 2px; background: linear-gradient(90deg, #F2A93B 0 60%, #30333A 60% 100%)"></span><span style="font-size: 12px; font-weight: 600; color: #F3F1EC">En route</span></li>
+      <li style="display: flex; flex-direction: column; gap: 8px"><span style="height: 4px; border-radius: 2px; background: #30333A"></span><span style="font-size: 12px; color: #8C8B86">Arrived</span></li>
+      <li style="display: flex; flex-direction: column; gap: 8px"><span style="height: 4px; border-radius: 2px; background: #30333A"></span><span style="font-size: 12px; color: #8C8B86">Secured</span></li>
+    </ol>
+
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 56px; height: 56px; flex: none; border-radius: 50%; background: #23262B; box-shadow: 0 0 0 2px #131518, 0 0 0 3.5px #F2A93B; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 650; font-size: 22px">A</span>
+      <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+        <span style="font-size: 18px; font-weight: 600">Ahmed K.</span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #B5B3AD"><svg width="13" height="13" viewBox="0 0 24 24" fill="#F2A93B" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9z"/></svg>4.9 · Low-Angle operator</span>
+      </div>
+      <span style="flex: none; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 5px 10px 4px; border-radius: 7px; background: #F3F1EC; color: #0B0C0E; border: 1px solid #F3F1EC; box-shadow: inset 0 0 0 1px #0B0C0E" aria-label="Plate D 12345"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 7px; letter-spacing: 0.24em; color: #55534E">DUBAI</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; line-height: 1">D 12345</span></span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+      <button type="button" style="height: 60px; border-radius: 16px; border: 0; background: #F2A93B; color: #1B1408; font-family: inherit; font-size: 13px; font-weight: 600; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</button>
+      <button type="button" style="height: 60px; border-radius: 16px; border: 1px solid #2A2D33; background: #1A1C20; color: #F3F1EC; font-family: inherit; font-size: 13px; font-weight: 500; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Message</button>
+      <button type="button" style="height: 60px; border-radius: 16px; border: 1px solid #2A2D33; background: #1A1C20; color: #F3F1EC; font-family: inherit; font-size: 13px; font-weight: 500; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6h14v-6"/></svg>Share trip</button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
