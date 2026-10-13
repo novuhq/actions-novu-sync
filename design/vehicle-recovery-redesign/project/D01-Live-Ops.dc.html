@@ -43,7 +43,7 @@ input::placeholder{color:#8C8B86}
         <span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #8C8B86"><span style="width: 7px; height: 7px; border-radius: 50%; background: #2EBD6B; animation: livePulse 1.6s ease-in-out infinite"></span>LIVE · DUBAI</span>
         <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-stretch: 125%; font-weight: 700; font-size: 30px; line-height: 1.05; letter-spacing: -0.03em">Live operations</h1>
       </div>
-      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+      <div style="flex: 0 1 460px; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px">
         <label for="d01search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search jobs, trucks or plates</label>
         <span style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border-radius: 12px; background: #131518; border: 1px solid #24272C; min-width: 0; flex: 1 1 260px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C8B86" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><input id="d01search" type="search" placeholder="Search jobs, trucks or plates" style="flex: 1; min-width: 0; border: 0; background: transparent; color: #F3F1EC; font-family: inherit; font-size: 14px; outline: none"></span>
         <button type="button" style="height: 44px; padding: 0 18px; border-radius: 12px; border: 0; background: #F2A93B; color: #1B1408; font-family: inherit; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New job</button>
@@ -59,7 +59,7 @@ input::placeholder{color:#8C8B86}
 
     <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
 
-      <section aria-label="Operations map" style="flex: 999 1 560px; min-width: 0; position: relative; height: 640px; border-radius: 22px; overflow: hidden; background: #0F1114; border: 1px solid #24272C">
+      <section aria-label="Operations map" style="flex: 999 1 560px; min-width: 0; position: relative; height: clamp(420px, 56vw, 640px); border-radius: 22px; overflow: hidden; background: #0F1114; border: 1px solid #24272C">
         <svg width="100%" height="100%" viewBox="0 0 820 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map of Dubai with six live jobs and eighteen trucks" style="display: block">
           <defs>
             <pattern id="d01Streets" width="30" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(-26.6)">
@@ -80,14 +80,14 @@ input::placeholder{color:#8C8B86}
             <path d="M214 250L160 238M218 262L166 262M224 276L172 288M230 292L182 314M210 240L176 206M222 254L262 222M228 268L270 246M234 284L276 270"/>
           </g>
           <g font-family="'Geist Mono', ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#5D6068">
-            <text x="96" y="458">MARINA</text>
-            <text x="120" y="574">JLT</text>
+            <text x="88" y="474">MARINA</text>
+            <text x="96" y="532">JLT</text>
             <text x="320" y="548">AL BARSHA</text>
             <text x="290" y="380">AL SUFOUH</text>
             <text x="490" y="470">AL QUOZ</text>
             <text x="606" y="250">DIFC</text>
             <text x="640" y="340">DOWNTOWN</text>
-            <text x="744" y="122">DEIRA</text>
+            <text x="690" y="134">DEIRA</text>
           </g>
           <text x="80" y="110" font-family="'Geist Mono', ui-monospace, monospace" font-size="11" letter-spacing="3" fill="#2A3946">ARABIAN GULF</text>
           <text x="466" y="352" transform="rotate(-26.6 466 352)" font-family="'Geist Mono', ui-monospace, monospace" font-size="9" letter-spacing="2" fill="#555861">SHEIKH ZAYED RD</text>
@@ -114,7 +114,7 @@ input::placeholder{color:#8C8B86}
             <g transform="translate(430 385)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#B5B3AD" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">LA</text></g>
             <g transform="translate(612 278)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#5B9CF2" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">EN</text></g>
             <g transform="translate(110 440)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#5B9CF2" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">LA</text></g>
-            <g transform="translate(770 150)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#F2A93B" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">WL</text></g>
+            <g transform="translate(724 168)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#F2A93B" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">WL</text></g>
             <g transform="translate(360 520)"><rect x="-15" y="-11" width="30" height="22" rx="7" fill="#131518" stroke="#2EBD6B" stroke-width="1.6"/><text y="3.5" fill="#F3F1EC">FB</text></g>
           </g>
           <path d="M190 522L150 545" stroke="#F0554A" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
